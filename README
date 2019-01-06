@@ -3,7 +3,7 @@ Author: Anugesh Balasubramaniam
 Date: 01-30-2017
 ****************************************
 
-BRIEF REPORT:
+BRIEF DESCRIPTION:
 My shell algorithm is an attempt to imitate the bash terminal
 on linux and unix. It waits for the user to enter any bash commands
 and also some additional commands such as add 1 2 3 will calculate 
