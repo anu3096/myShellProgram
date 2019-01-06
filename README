@@ -1,0 +1,85 @@
+****************************************
+Author: Anugesh Balasubramaniam
+Date: 01-30-2017
+****************************************
+
+BRIEF REPORT:
+My shell algorithm is an attempt to imitate the bash terminal
+on linux and unix. It waits for the user to enter any bash commands
+and also some additional commands such as add 1 2 3 will calculate 
+and display the total, muls 1 2 3 will calculate and display the product,
+and args “argument,1” 2 3 four will calculate the number of arguments 
+and print the arguments that were given. It also checks to see if the 
+user enters either < or > to indicate the program to redirect the output
+or input from a file. I assumed that redirecting from an input file will only be
+performed for certain bash commands like “sort” and “cat” because of the thought
+that typing ls < filename will be more work for the user compared to typing ls -al.
+The steps on how compile and execute my program are all listed below.
+
+Made for and tested on Linux & Unix systems.
+
+****************************************
+
+COMPILATION:
+make
+
+****************************************
+
+USAGE:
+
+./msh
+
+****************************************
+
+RUNTIME:
+
+Example:
+
+make
+
+./a1
+
+>> ls -al
+drwxr-xr-x  13 Anugesh  staff    442 30 Jan 23:15 .
+drwxr-xr-x   6 Anugesh  staff    204 25 Jan 13:09 ..
+-rw-r--r--@  1 Anugesh  staff   8196 30 Jan 19:41 .DS_Store
+-rw-r--r--@  1 Anugesh  staff    223 28 Jan 10:54 Makefile
+-rwxrwxrwx@  1 Anugesh  staff    875 30 Jan 23:15 README.txt
+-rw-r--r--@  1 Anugesh  staff  11200 30 Jan 23:11 a1.c
+-rw-r--r--   1 Anugesh  staff  13344 30 Jan 23:15 a1.o
+drwxr-xr-x  10 Anugesh  staff    340 21 Jan 11:04 lex
+-rw-r--r--@  1 Anugesh  staff    448 30 Jan 11:26 lex.c
+-rw-r--r--   1 Anugesh  staff  44644 30 Jan 11:26 lex.yy.c
+-rw-r--r--   1 Anugesh  staff  32652 30 Jan 11:26 lex.yy.o
+-rwxr-xr-x   1 Anugesh  staff  29440 30 Jan 23:15 msh
+-rw-r--r--   1 Anugesh  staff     17 30 Jan 22:25 output.txt
+>>add 1 10 0xa
+1 + 10 + 0xa = 21.00
+>>args "anugesh,bala" 1 2 three four
+argc = 5, args = "anugesh,bala", 1, 2, three, four
+>>exit     
+
+
+[Shell program terminated]
+
+****************************************
+
+LIMITATIONS:
+- was not able to implement:
+(4. A command, with or without arguments, executed in the background using &.)
+because I did not understand how background processing works with commands.
+
+- also was not able to implement input redirected from a file for some commands.
+commands that I know of such as (sort < filename) and (cat < filename) works with
+my program but commands like (ls < filename) or (add < filename) or (args < filename)
+do not work with my program.
+
+****************************************
+
+REFERENCES:
+- For parsing an arguments with quotations: http://stackoverflow.com/questions/28247979/lex-flex-regular-expression-for-string-literals-in-c-c
+- https://www.tutorialspoint.com/c_standard_library/c_function_freopen.htm
+- https://www.quora.com/Why-are-the-exec-family-of-functions-execl-execvp-etc-named-the-way-they-are
+- man pages
+
+
